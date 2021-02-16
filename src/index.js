@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { App } from './App';
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyle, defaultTheme } from './utils';
+import 'bootstrap/dist/css/bootstrap.min.css'; // bootstrap styles
 
 const AppWrapper = (props) => {
   return (
