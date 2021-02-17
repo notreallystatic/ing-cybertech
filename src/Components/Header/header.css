@@ -1,0 +1,45 @@
+body {
+  background-color: gray!important;
+}
+
+nav {
+  width: 100vw;
+  min-height: 60px;
+  padding: 18px 0;
+  z-index: 99;
+  color: white;
+  font-weight: 600;
+  position: fixed;
+  transition: all 1s ease 0s;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+nav li {
+  display: inline;
+  list-style: none;
+}
+
+nav li a {
+  padding: 2px 6px 4px;
+  border-radius: 30px;
+  transition: all .5s ease 0s;
+}
+
+nav li a:hover {
+  background-color: #841c26;
+}
+
+.scrollNav {
+  background-color: #db5776;
+}
+
+.scrollNav a:hover {
+  background-color: #2191FB;
+}

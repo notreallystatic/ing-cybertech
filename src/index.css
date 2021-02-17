@@ -1,0 +1,9 @@
+.deb {
+  border: 1px solid orangered;
+}
+
+.row, .col {
+  margin-right: 0px;
+  margin-left: 0px;
+  padding: 0px; 
+}
