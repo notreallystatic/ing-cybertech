@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Button} from './Components/Buttons/button';
 
 const MyDiv = styled.div`
   width: 150px;
@@ -11,7 +12,9 @@ const MyDiv = styled.div`
 export const App = (props) => {
   return (
     <>
-      <MyDiv>hello</MyDiv>
+      <Button primary>hello</Button>
+      <Button primary>world</Button>
+      
     </>
   );
 };
