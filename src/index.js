@@ -4,6 +4,7 @@ import { App } from './App';
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyle, defaultTheme } from './utils';
 import 'bootstrap/dist/css/bootstrap.min.css'; // bootstrap styles
+import './index.css';
 
 const AppWrapper = (props) => {
   return (
