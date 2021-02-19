@@ -1,5 +1,5 @@
-import { primary, darkPrimary, neutral, yellow, green, red } from './colors';
-import { primaryFont } from './typography';
+import { primary, neutral, yellow, green, red } from './colors';
+import { primaryFont, typeScale } from './typography';
 
 export const defaultTheme = {
   bodyBackground: neutral[100],
@@ -27,4 +27,12 @@ export const defaultTheme = {
     successColorHover: green[200],
     successColorActive: green[300],
   },
+  h1: typeScale.header1,
+  h2: typeScale.header2,
+  h3: typeScale.header3,
+  h4: typeScale.header4,
+  h5: typeScale.header5,
+  p: typeScale.paragraph,
+  copyright: typeScale.copyright,
+  helperText: typeScale.helperText,
 };
