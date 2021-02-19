@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import './header.css';
 import $ from 'jquery';
+import { Navbar, Nav } from 'react-bootstrap';
 
-const Nav = styled.nav`
+const NavB = styled.nav`
   background: ${(props) => props.theme.primaryColor};
   position: fixed;
   width: 100vw;
@@ -17,7 +18,7 @@ const Nav = styled.nav`
 `;
 
 const DetailsDiv = styled.div`
-  height: 200px;
+  height: 300px;
   width: 80vw;
   margin: 0 auto;
   padding: 20px;
@@ -26,99 +27,304 @@ const DetailsDiv = styled.div`
   top: 100px;
   position: fixed;
   left: 10vw;
-  background: white;
+  color: white;
+  background: #de6a76;
   border-radius: 25px;
 `;
 
-const addHoverEffect = (anchorId, divId) => {
-  $('#' + anchorId).hover(
-    () => {
-      $('#' + divId).css('display', 'block');
-    },
-    () => {
-      $('#' + divId).css('display', 'none');
-    }
-  );
-};
-
 export const Header = () => {
-  useEffect(() => {
-    // add hover effect to show divs when hovered over anchor tag
-    addHoverEffect('about-us', 'about-us-div');
-    addHoverEffect('services', 'services-div');
-    addHoverEffect('portfolio', 'portfolio-div');
-    addHoverEffect('resources', 'resources-div');
-    addHoverEffect('contact', 'contact-div');
-    // make navbar transparent to solid on scroll
-    $(window).scroll(function () {
-      if ($(window).scrollTop() >= 50) {
-        $('nav').css('background', '#db5776');
-        $('nav').addClass('scrollNav');
-      } else {
-        $('nav').css('background', 'transparent');
-        $('nav').removeClass('scrollNav');
-      }
-    });
-  }, []);
-
   return (
     <>
-      <nav>
-        <div className='row justify-content-between w-100 '>
-          <div className='col col-3 '>logo here</div>
-          <div className='col col-9 '>
-            <ul>
-              <li>
-                <a id='about-us'>About Us</a>
-              </li>
-              <li>
-                <a>Services</a>
-              </li>
-              <li>
-                <a>Portfolio</a>
-              </li>
-              <li>
-                <a>Resources</a>
-              </li>
-              <li>
-                <a>Contact</a>
-              </li>
-            </ul>
+      <Navbar className='myNavbar'>
+        <Navbar.Brand className='myNavbar_brand' style={{ color: 'white' }}>
+          ING CyberTech
+        </Navbar.Brand>
+        <Nav
+          style={{
+            width: '100%',
+          }}
+        >
+          <div className='Nav'>
+            <div className='dropdown_nav nav-item mr-3'>
+              <button className='dropbtn'>Solutions</button>
+              <div
+                className='dropdown-content-about-us'
+                style={{ background: 'none' }}
+              >
+                <div
+                  style={{
+                    height: '2rem',
+                    background: 'none',
+                  }}
+                ></div>
+                <div style={{ backgroundColor: '#f9f9f9', minHeight: '28rem' }}>
+                  <div
+                    className='row'
+                    style={{
+                      minWidth: '100%',
+                      minHeight: '100%',
+                      padding: '2rem 0rem',
+                      border: '1px solid black',
+                    }}
+                  >
+                    <div className='col-4'>
+                      {' '}
+                      <div
+                        className='row content-heading'
+                        style={{ padding: '0rem 0rem 1rem 0rem' }}
+                      >
+                        SECURITY NEED
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Application Security
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Research, Technology & Validation
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Cloud / Mobility Security
+                      </div>
+                      <div className='row w-100 content-item'>Malware</div>
+                      <div className='row w-100 content-item'>
+                        Merges & Acquisitions
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Peace Of Mind / E-Discovery
+                      </div>
+                      <div className='row w-100 content-item'>Privacy</div>
+                      <div className='row w-100 content-item'>
+                        Prote from Advanced Threats
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Skill Set Deficiency
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Threat Mitigation
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Network Security
+                      </div>
+                    </div>
+                    <div className='col-4'>
+                      {' '}
+                      <div
+                        className='row content-heading'
+                        style={{ padding: '0rem 0rem 1rem 0rem' }}
+                      >
+                        SECURITY VERTICAL
+                      </div>
+                      <div className='row w-100 content-item'>
+                        {' '}
+                        Aerospace / IFE
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Automotive / IUE
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Energy & Utilities
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Financial Services & Insurance
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Gaming & Entertainment
+                      </div>
+                      <div className='row w-100 content-item'>Healthcare</div>
+                      <div className='row w-100 content-item'>
+                        Educational Institutes
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Retail & Hospitality
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Technology & Manufacturing
+                      </div>
+                    </div>{' '}
+                    <div className='col-4'>
+                      <div
+                        className='row content-heading'
+                        style={{ padding: '0rem 0rem 1rem 0rem' }}
+                      >
+                        SECURITY COMPLIANCE
+                      </div>
+                      <div className='row w-100 content-item'>
+                        PCI Compliance
+                      </div>
+
+                      <div className='row w-100 content-item'>CMMC</div>
+                      <div className='row w-100 content-item'>
+                        HIPAA / HITECH
+                      </div>
+                      <div className='row w-100 content-item'>
+                        ISO 27001 / 27002
+                      </div>
+                      <div className='row w-100 content-item'>Data Privacy</div>
+                      <div className='row w-100 content-item'>GDPR</div>
+                      <div className='row w-100 content-item'>FCA</div>
+                      <div className='row w-100 content-item'>GLBA</div>
+                      <div className='row w-100 content-item'>NCUA / FFIEC</div>
+                      <div className='row w-100 content-item'>NERC CIP</div>
+                      <div className='row w-100 content-item'>
+                        FISMA/FEDRAMP
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Enterprise Risk Assesment
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Enterprise Security Program
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Cybersecurity Strategy and Roadstamps
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='dropdown_nav nav-item mr-3'>
+              <button className='dropbtn'>Services</button>
+              <div
+                className='dropdown-content-services'
+                style={{ background: 'none' }}
+              >
+                <div
+                  style={{
+                    height: '2rem',
+                    background: 'none',
+                  }}
+                ></div>
+                <div style={{ backgroundColor: '#f9f9f9', minHeight: '28rem' }}>
+                  <div
+                    className='row'
+                    style={{
+                      minWidth: '100%',
+                      minHeight: '100%',
+                      padding: '2rem 0rem',
+                      border: '1px solid black',
+                    }}
+                  >
+                    <div className='col-4'>
+                      {' '}
+                      <div
+                        className='row content-heading'
+                        style={{ padding: '0rem 0rem 1rem 0rem' }}
+                      >
+                        MANAGED SERVICES
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Managed Detection Response
+                      </div>
+                      <div className='row w-100 content-item'>SIEM</div>
+                      <div className='row w-100 content-item'>
+                        Breach Detection
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Endpoint Protection
+                      </div>
+                      <div className='row w-100 content-item'>DDOS</div>
+                      <div className='row w-100 content-item'>
+                        Email Security
+                      </div>
+                      <div className='row w-100 content-item'>Encryption</div>
+                      <div className='row w-100 content-item'>Firewall</div>
+                      <div className='row w-100 content-item'>IDS / IPS</div>
+                      <div className='row w-100 content-item'>
+                        Incident Response, Forensics & malware Analysis
+                      </div>
+                      <div className='row w-100 content-item'>NAC</div>
+                      <div className='row w-100 content-item'>
+                        Redemption & Vulnerabilty
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Secure web Gateway
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Security Operations Management
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Threat Analysis
+                      </div>
+                      <div className='row w-100 content-item'>UTM</div>
+                      <div className='row w-100 content-item'>
+                        Web Application Firewall
+                      </div>
+                    </div>
+                    <div className='col-4'>
+                      {' '}
+                      <div
+                        className='row content-heading'
+                        style={{ padding: '0rem 0rem 1rem 0rem' }}
+                      >
+                        CONNECTED SYSTEMS
+                      </div>
+                      <div className='row w-100 content-item'>
+                        {' '}
+                        ICS/ SCADA Real-time Monitoring
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Technical Assesment
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Architecture Review & Assessment
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Mobile Device & Application Testing
+                      </div>
+                      <div className='row w-100 content-item'>
+                        Smart Device Testing
+                      </div>
+                      <div className='row w-100 content-item'>IOt/IIOT</div>
+                      <div className='row w-100 content-item'>Smart Cities</div>
+                      <div className='row w-100 content-item'>
+                        Embedded Systems
+                      </div>
+                    </div>{' '}
+                    <div className='col-4'>
+                      <div
+                        className='row content-heading'
+                        style={{ padding: '0rem 0rem 1rem 0rem' }}
+                      >
+                        PROFESSIONAL SERVICES
+                      </div>
+                      <div className='row w-100 content-item'>Testing</div>
+
+                      <div className='row w-100 content-item'>Compliance</div>
+                      <div className='row w-100 content-item'>Training</div>
+                      <div className='row w-100 content-item'>
+                        Talent Acquisition
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='dropdown_nav nav-item mr-3'>
+              <button className='dropbtn'>Resources</button>
+              <div
+                className='dropdown-content-Solutions'
+                style={{ background: 'none' }}
+              >
+                <div
+                  style={{
+                    height: '2rem',
+                    background: 'none',
+                  }}
+                ></div>
+                <div style={{ backgroundColor: '#f9f9f9', minHeight: '8rem' }}>
+                  <div className='row w-100' style={{ padding: ' 3rem 0rem' }}>
+                    <div className='col-2 content-heading'>Blog</div>
+                    <div className='col-2 content-heading'>Upcoming</div>
+                    <div className='col-2 content-heading'>Events</div>
+                    <div className='col-2 content-heading'>Documentation</div>
+                    <div className='col-2 content-heading'>Github</div>
+                    <div className='col-2 content-heading'>In the news</div>
+                  </div>
+                </div>
+              </div>
+            </div>{' '}
           </div>
-        </div>
-      </nav>
-      <div style={{ height: '400px' }}>hello</div>
-      <div style={{ height: '400px' }}>hello</div>
-      <div style={{ height: '400px' }}>hello</div>
-      <div style={{ height: '400px' }}>hello</div>
-      <div style={{ height: '400px' }}>hello</div>
-      <div style={{ height: '400px' }}>hello</div>
-      <div>hello</div>
-      <div>hello</div>
-      <div>hello</div>
-      <div>hello</div>
-      <div>hello</div>
-      <div>hello</div>
-      <DetailsDiv id='about-us-div' className='details-div'>
-        hello
-      </DetailsDiv>
+        </Nav>
+      </Navbar>
     </>
   );
 };
-// const NavLink = styled.a`
-//   background: none;
-//   padding: 2px 6px 4px;
-//   color: inherit;
-//   border: 1px solid black;
-// `;
-
-// const Li = styled.li`
-//   display: inline;
-// `;
-
-// const Ul = styled.ul`
-//   border: 1px solid yellow;
-//   position: relative;
-//   top: 50%;
-//   transform: translateY(-50%);
-// `;
